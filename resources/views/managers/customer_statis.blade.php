@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>THỐNG KÊ THUỘC THÚ Y</title>
+    <title>PetHaven Animal Hospital</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.0/font/bootstrap-icons.min.css" rel="stylesheet">
     <style>
@@ -104,13 +104,13 @@
                         </a>
                     </li>
                     <li class="nav-item mb-2">
-                        <a class="nav-link active" href="#">
+                        <a class="nav-link" href="#">
                             <i class="bi bi-calendar-plus"></i>
                             Thống kê thuốc thú Y
                         </a>
                     </li>
                     <li class="nav-item mb-2">
-                        <a class="nav-link" href="#">
+                        <a class="nav-link active" href="#">
                             <i class="bi bi-calendar-check"></i>
                             Thống kê khách hàng
                         </a>
@@ -133,86 +133,78 @@
 
                 <form class="row g-3 mb-3">
                     <div class="col-md-6">
-                        <label for="mathuoc" class="form-label">Mã thuốc</label>
-                        <input type="text" class="form-control" id="maThuoc">
+                        <label for="maKhachHang" class="form-label">Mã khách hàng</label>
+                        <input type="text" class="form-control" id="maKhachHang">
                     </div>
                     <div class="col-md-6">
-                        <label for="Trangthai" class="form-label">Trạng thái</label>
-                        <select id="Trangthai" class="form-select">
-                            <option selected>Chọn trạng thái..</option>
-                            <option value="1">Còn </option>
-                            <option value="2">Hết</option>
+                        <label for="tenDichVu" class="form-label">Tên dịch vụ</label>
+                        <select id="tenDichVu" class="form-select">
+                            <option selected>Chọn dịch vụ...</option>
+                            <option value="1">Chăm sóc</option>
+                            <option value="2">Thăm khám</option>
                         </select>
                     </div>
                     <div class="col-md-6">
-                        <label for="maThuoc" class="form-label p-1">Mã thuốc</label>
-                        <input type="text" class="form-control" id="tenNhanVien">
+                        <label for="maDichvu" class="form-label">Mã dịch vụ</label>
+                        <input type="text" class="form-control" id="maDichvu">
                     </div>
                     <div class="col-md-6">
-                        <label for="giaThuoc" class="form-label p-1"> Giá thuốc </label>
-                        <input type="text" class="form-control" id="giaThuoc">
-                    </div>
-                    <div class="col-md-6">
-                        <label for="ngaySanXuat" class="form-label p-1">Ngày sản xuất</label>
-                        <input type="date" class="form-control" id="ngaySanXuat">
-                    </div>
-                    <div class="col-md-6">
-                        <label for="hanSuDung" class="form-label p-1">Hạn sử dụng</label>
-                        <input type="date" class="form-control" id="hanSuDung">
+                        <label for="giaDichVu" class="form-label">Giá dịch vụ</label>
+                        <input type="text" class="form-control" id="giaDichVu">
                     </div>
                     <div class="col-md-6 mb-4">
-                        <label for="soLuong" class="form-label p-1 ">Số lượng</label>
-                        <input type="text" class="form-control" id="soLuong">
+                        <label for="tuNgayden" class="form-label">Từ ngày</label>
+                        <input type="date" class="form-control" id="tuNgay">
                     </div>
                     <div class="col-md-6 mb-4">
-                        <label for="ngayNhap" class="form-label p-1  ">Ngày nhập</label>
-                        <input type="date" class="form-control" id="ngayNhap">
+                        <label for="ngayDi" class="form-label"> Đến ngày</label>
+                        <input type="date" class="form-control" id="ngayDi">
                     </div>
-                    <div class=" row col-md-12  btn-container p-1">
-                        <span class="col-md-6   " >
-                            <button type="button" class="btn btn-secondary" style ="margin-left : 430px ;width: 20%;">Tìm kiếm</button>
+                    <div class=" row col-md-12  btn-container ">
+                        <span class="col-md-6 mb-4 " >
+                            <button type="button" class="btn btn-secondary mt-3" style ="margin-left : 650px">Tìm kiếm</button>
                         </span>
-                        <span class="col-md-6 ">
-                            <button type="button" class="btn btn-secondary " style="width: 25%";>Xuất thông tin</button>
+                        <span class="col-md-6">
+                            <button type="button" class="btn btn-secondary mt-3">Xuất thông tin</button>
                         </span>
                     </div>
                 </form>
                 <table class="table table-bordered">
                     <thead class="table-light"  >
                     <tr >
-                        <th scope="col" style="background-color: #9adafe ">Mã</th>
-                        <th scope="col " style="background-color: #9adafe ">Tên</th>
-                        <th scope="col" style="background-color: #9adafe ">SL</th>
-                        <th scope="col" style="background-color: #9adafe ">T.Thái</th>
-                        <th scope="col" style="background-color: #9adafe ">Giá</th>
-                        <th scope="col" style="background-color: #9adafe ">Ngày sản xuất</th>
-                        <th scope="col" style="background-color: #9adafe ">Hạn sử dụng</th>
-                        <th scope="col" style="background-color: #9adafe ">Ngày nhập</th>
+                        <th scope="col" style="background-color: #9adafe ">Mã KH</th>
+                        <th scope="col " style="background-color: #9adafe ">Mã dịch vụ</th>
+                        <th scope="col" style="background-color: #9adafe ">Tên dịch vụ</th>
+                        <th scope="col" style="background-color: #9adafe ">Giá dịch vụ</th>
+                        <th scope="col" style="background-color: #9adafe ">Ngày khám</th>
+
                     </tr>
                     </thead>
                     <tbody>
                     <tr>
-                        <td>MT001</td>
-                        <td>Thuốc ABC</td>
-                        <td>50</td>
-                        <td>Còn</td>
-                        <td>100,000 VNĐ</td>
-                        <td>2023-05-20</td>
-                        <td>2024-05-20</td>
-                        <td>2023-04-15</td>
+                        <td>KH01</td>
+                        <td>DV01</td>
+                        <td>Khám tổng quát</td>
+                        <td>500,000 VND</td>
+                        <td>26/5/2024</td>
                     </tr>
                     <tr>
-                        <td>MT002</td>
-                        <td>Thuốc XYZ</td>
-                        <td>20</td>
-                        <td>Hết</td>
-                        <td>150,000 VNĐ</td>
-                        <td>2022-12-10</td>
-                        <td>2023-12-10</td>
-                        <td>2022-11-20</td>
+                        <td>KH02</td>
+                        <td>DV02</td>
+                        <td>Khám chuyên khoa</td>
+                        <td>700,000 VND</td>
+                        <td>26/5/2024</td>
+                    </tr>
+                    <tr>
+                        <td>KH01</td>
+                        <td>DV01</td>
+                        <td>Khám tổng quát</td>
+                        <td>500,000 VND</td>
+                        <td>26/5/2024</td>
                     </tr>
                     </tbody>
                 </table>
+
             </div>
         </div>
     </div>

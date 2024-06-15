@@ -170,7 +170,7 @@
                     </div>
                     <div class=" row col-md-12  btn-container p-1">
                         <span class="col-md-6   " >
-                            <button type="button" class="btn btn-secondary" style ="margin-left : 430px ;width: 20%;">Tìm kiếm</button>
+                            <button type="button" class="btn btn-primary" style ="margin-left : 430px ;width: 20%;">Tìm kiếm</button>
                         </span>
                         <span class="col-md-6 ">
                             <button type="button" class="btn btn-secondary " style="width: 25%";>Xuất thông tin</button>
@@ -191,6 +191,26 @@
                     </tr>
                     </thead>
                     <tbody>
+                    <tr>
+                        <td>MT001</td>
+                        <td>Thuốc ABC</td>
+                        <td>50</td>
+                        <td>Còn</td>
+                        <td>100,000 VNĐ</td>
+                        <td>2023-05-20</td>
+                        <td>2024-05-20</td>
+                        <td>2023-04-15</td>
+                    </tr>
+                    <tr>
+                        <td>MT002</td>
+                        <td>Thuốc XYZ</td>
+                        <td>20</td>
+                        <td>Hết</td>
+                        <td>150,000 VNĐ</td>
+                        <td>2022-12-10</td>
+                        <td>2023-12-10</td>
+                        <td>2022-11-20</td>
+                    </tr>
                     <tr>
                         <td>MT001</td>
                         <td>Thuốc ABC</td>

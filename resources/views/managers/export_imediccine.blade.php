@@ -130,53 +130,7 @@
                 <img class="w-30 h-30" style="width: 40px" src="../../img/logo.jpg" alt=""></span>
             </div>
             <div class="p-4">
-
-                <form class="row g-3 mb-3">
-                    <div class="col-md-6">
-                        <label for="mathuoc" class="form-label">Mã thuốc</label>
-                        <input type="text" class="form-control" id="maThuoc">
-                    </div>
-                    <div class="col-md-6">
-                        <label for="Trangthai" class="form-label">Trạng thái</label>
-                        <select id="Trangthai" class="form-select">
-                            <option selected>Chọn trạng thái..</option>
-                            <option value="1">Còn </option>
-                            <option value="2">Hết</option>
-                        </select>
-                    </div>
-                    <div class="col-md-6">
-                        <label for="maThuoc" class="form-label p-1">Mã thuốc</label>
-                        <input type="text" class="form-control" id="tenNhanVien">
-                    </div>
-                    <div class="col-md-6">
-                        <label for="giaThuoc" class="form-label p-1"> Giá thuốc </label>
-                        <input type="text" class="form-control" id="giaThuoc">
-                    </div>
-                    <div class="col-md-6">
-                        <label for="ngaySanXuat" class="form-label p-1">Ngày sản xuất</label>
-                        <input type="date" class="form-control" id="ngaySanXuat">
-                    </div>
-                    <div class="col-md-6">
-                        <label for="hanSuDung" class="form-label p-1">Hạn sử dụng</label>
-                        <input type="date" class="form-control" id="hanSuDung">
-                    </div>
-                    <div class="col-md-6 mb-4">
-                        <label for="soLuong" class="form-label p-1 ">Số lượng</label>
-                        <input type="text" class="form-control" id="soLuong">
-                    </div>
-                    <div class="col-md-6 mb-4">
-                        <label for="ngayNhap" class="form-label p-1  ">Ngày nhập</label>
-                        <input type="date" class="form-control" id="ngayNhap">
-                    </div>
-                    <div class=" row col-md-12  btn-container p-1">
-                        <span class="col-md-6   " >
-                            <button type="button" class="btn btn-secondary" style ="margin-left : 430px ;width: 20%;">Tìm kiếm</button>
-                        </span>
-                        <span class="col-md-6 ">
-                            <button type="button" class="btn btn-secondary " style="width: 25%";>Xuất thông tin</button>
-                        </span>
-                    </div>
-                </form>
+                <h3 class ="text-center fw-3 mt-4 mb-4">Mẫu thống kê thuốc</h3>
                 <table class="table table-bordered">
                     <thead class="table-light"  >
                     <tr >
@@ -211,14 +165,61 @@
                         <td>2023-12-10</td>
                         <td>2022-11-20</td>
                     </tr>
+                    <tr>
+                        <td>MT002</td>
+                        <td>Thuốc XYZ</td>
+                        <td>20</td>
+                        <td>Hết</td>
+                        <td>150,000 VNĐ</td>
+                        <td>2022-12-10</td>
+                        <td>2023-12-10</td>
+                        <td>2022-11-20</td>
+                    </tr>
                     </tbody>
                 </table>
+                <div><button class="btn btn-primary float-end mt-3" id="btnXuatThongTin"> Xuất thông tin</button></div>
+
             </div>
         </div>
     </div>
 </div>
+<div><button class="btn btn-primary float-end mt-3" id="btnXuatThongTin"> Xuất thông tin</button></div>
+
+</div>
+
+</div>
+</div>
+</div>
+<!-- Modal thông báo xuất thành công -->
+<div class="modal fade" id="myModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title text-center" id="exampleModalLabel">Thông báo</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                Xuất thông tin thành công.
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Đóng</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--JS thông báo xuất thành công -->
+<script>
+    document.getElementById('btnXuatThongTin').addEventListener('click', function() {
+        var myModal = new bootstrap.Modal(document.getElementById('myModal'), {
+            keyboard: false
+        });
+        myModal.show();
+    });
+</script>
+
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-        crossorigin="anonymous"></script>
+        crossorigin="anonymous"
+></script>
 </body>
 </html>
