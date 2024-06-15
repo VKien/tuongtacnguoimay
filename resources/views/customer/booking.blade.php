@@ -115,6 +115,7 @@
         </div>
     </div>
 </div>
+  <!-- Phần xu ly bo  trông cac trường trong from  -->
 <script>
     document.getElementById('booking-form').addEventListener('submit', function (event) {
         event.preventDefault(); // Ngăn không cho form submit tự động
