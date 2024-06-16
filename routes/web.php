@@ -15,8 +15,12 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('home');
+    return view('customer.booking');
 });
+Route::get('/managers/employee', function () {
+    return view('managers.employee_stats');
+});
+
 
 Route::get('logout', [CustomAuthController::class, 'logout']);
 
