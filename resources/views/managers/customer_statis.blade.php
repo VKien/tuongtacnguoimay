@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PetHaven Animal Hospital</title>
+    <title>THỐNG KÊ THUỐC THÚ Y</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.0/font/bootstrap-icons.min.css" rel="stylesheet">
     <style>
@@ -11,7 +11,7 @@
             font-family: Arial, sans-serif;
         }
         .sidebar {
-            background-color: #d8e6f3;
+            background-color: #b8e5fe;
             height: 100vh;
             box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
             padding-top: 20px;
@@ -33,14 +33,15 @@
             color: #000;
             font-size: 13px;
             margin-bottom: 10px;
+            transition: background-color 0.3s ease; /* Thêm hiệu ứng transition */
         }
         .sidebar .nav-link.active {
-            background-color: #9fc5f8;
-            color: #fff;
+            background-color: #DDDDDD;
+            color: #000;
         }
         .sidebar .nav-link:hover {
-            background-color: #9fc5f8;
-            color: #fff;
+            background-color: #DDDDDD;
+            color: #000;
         }
         .container-fluid {
             padding-left: 0;
@@ -86,31 +87,69 @@
             background-color: #c82333;
             border-color: #bd2130;
         }
+        /* Ensure proper layout alignment */
+        form .row {
+            margin-left: 0;
+            margin-right: 0;
+        }
+
+        form .form-check-inline {
+            margin-left: 10px;
+        }
+
+        form .btn-secondary {
+            margin-top: 10px;
+        }
+
+        form .text-center button {
+            margin: 10px;
+        }
+
+        form .w-100 {
+            width: 100%;
+        }
+
+        /* Custom button styling */
+        .custom-button {
+            width: 150px; /* Adjust button width as needed */
+        }
+
+        /* Add space between inline buttons */
+        .row .col-auto:not(:last-child) {
+            margin-right: 20px;
+        }
+
+        /* Button hover effect */
+        .btn-secondary:hover {
+            background-color: #0b5ed7;
+            border-color: #0a58ca;
+        }
+
     </style>
 </head>
 <body>
 <div class="container-fluid">
     <div class="row">
         <div class="col-md-2 sidebar mt-0">
-            <div class="d-flex flex-column p-3 pt-0 ">
+            <div class="d-flex flex-column p-3 pt-0">
                 <div class="mt-0">
                     <span> <i class="bi bi-person-circle"></i>BAC SI</span>
                 </div>
                 <ul class="nav flex-column">
                     <li class="nav-item mb-2">
-                        <a class="nav-link " href="#">
+                        <a class="nav-link" href="#">
                             <i class="bi bi-calendar-check"></i>
                             Thống kê nhân viên
                         </a>
                     </li>
                     <li class="nav-item mb-2">
-                        <a class="nav-link" href="#">
+                        <a class="nav-link active" href="#">
                             <i class="bi bi-calendar-plus"></i>
                             Thống kê thuốc thú Y
                         </a>
                     </li>
                     <li class="nav-item mb-2">
-                        <a class="nav-link active" href="#">
+                        <a class="nav-link" href="#">
                             <i class="bi bi-calendar-check"></i>
                             Thống kê khách hàng
                         </a>
@@ -153,20 +192,20 @@
                         <input type="text" class="form-control" id="giaDichVu">
                     </div>
                     <div class="col-md-6 mb-4">
-                        <label for="tuNgayden" class="form-label">Từ ngày</label>
+                        <label for="tuNgay" class="form-label">Từ ngày</label>
                         <input type="date" class="form-control" id="tuNgay">
                     </div>
                     <div class="col-md-6 mb-4">
-                        <label for="ngayDi" class="form-label"> Đến ngày</label>
+                        <label for="ngayDi" class="form-label">Đến ngày</label>
                         <input type="date" class="form-control" id="ngayDi">
                     </div>
-                    <div class=" row col-md-12  btn-container ">
-                        <span class="col-md-6 mb-4 " >
-                            <button type="button" class="btn btn-secondary mt-3" style ="margin-left : 650px">Tìm kiếm</button>
-                        </span>
-                        <span class="col-md-6">
-                            <button type="button" class="btn btn-secondary mt-3">Xuất thông tin</button>
-                        </span>
+                    <div class="row mb-3 justify-content-center ">
+                        <div class="col-auto">
+                            <button type="button" class="btn btn-secondary custom-button">Tìm kiếm</button>
+                        </div>
+                        <div class="col-auto">
+                            <button type="button" class="btn btn-secondary custom-button">Xuất thông tin</button>
+                        </div>
                     </div>
                 </form>
                 <table class="table table-bordered">
@@ -204,7 +243,6 @@
                     </tr>
                     </tbody>
                 </table>
-
             </div>
         </div>
     </div>

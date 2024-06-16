@@ -130,45 +130,44 @@
                 <img class="w-30 h-30" style="width: 40px" src="../../img/logo.jpg" alt=""></span>
             </div>
             <div class="p-4">
-                <h3 class="text-center fw-3  mt-5 mb-4">Mẫu thông kế thông tin</h3>
+                <h3 class ="text-center fw-2 p-4">Mẫu thống kê khách hàng</h3>
                 <table class="table table-bordered">
                     <thead class="table-light"  >
                     <tr >
-                        <th scope="col" style="background-color: #9adafe ">Mã</th>
-                        <th scope="col " style="background-color: #9adafe ">Tên</th>
-                        <th scope="col" style="background-color: #9adafe ">Giới tính</th>
-                        <th scope="col" style="background-color: #9adafe ">Chức vụ</th>
-                        <th scope="col" style="background-color: #9adafe ">Ngày sinh</th>
-                        <th scope="col" style="background-color: #9adafe ">SĐT</th>
-                        <th scope="col" style="background-color: #9adafe ">Email</th>
+                        <th scope="col" style="background-color: #9adafe ">Mã KH</th>
+                        <th scope="col " style="background-color: #9adafe ">Mã dịch vụ</th>
+                        <th scope="col" style="background-color: #9adafe ">Tên dịch vụ</th>
+                        <th scope="col" style="background-color: #9adafe ">Giá dịch vụ</th>
+                        <th scope="col" style="background-color: #9adafe ">Ngày khám</th>
+
                     </tr>
                     </thead>
                     <tbody>
                     <tr>
-                        <td>BS01</td>
-                        <td>Đẩu Thế</td>
-                        <td>Nam</td>
-                        <td>Bác sĩ</td>
+                        <td>KH01</td>
+                        <td>DV01</td>
+                        <td>Khám tổng quát</td>
+                        <td>500,000 VND</td>
                         <td>26/5/2024</td>
-                        <td>09xxxxxxxx</td>
-                        <td>bbb@gmail.com</td>
                     </tr>
                     <tr>
-                        <td>NV01</td>
-                        <td>Xuân Hiền</td>
-                        <td>Nam</td>
-                        <td>Bác sĩ</td>
+                        <td>KH02</td>
+                        <td>DV02</td>
+                        <td>Khám chuyên khoa</td>
+                        <td>700,000 VND</td>
                         <td>26/5/2024</td>
-                        <td>09xxxxxxxx</td>
-                        <td>ccc@gmail.com</td>
+                    </tr>
+                    <tr>
+                        <td>KH01</td>
+                        <td>DV01</td>
+                        <td>Khám tổng quát</td>
+                        <td>500,000 VND</td>
+                        <td>26/5/2024</td>
                     </tr>
                     </tbody>
                 </table>
-
                 <div><button class="btn btn-primary float-end mt-3" id="btnXuatThongTin"> Xuất thông tin</button></div>
-
             </div>
-
         </div>
     </div>
 </div>
@@ -198,9 +197,9 @@
         myModal.show();
     });
 </script>
-
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-        crossorigin="anonymous"></script>
+        crossorigin="anonymous"
+></script>
 </body>
 </html>

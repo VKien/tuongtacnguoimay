@@ -11,31 +11,37 @@
             font-family: Arial, sans-serif;
         }
         .sidebar {
-            background-color: #d8e6f3;
+            background-color: #b8e5fe;
             height: 100vh;
             box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
-            padding-top: 20px; /* Thêm khoảng cách từ trên cùng */
+            padding-top: 20px;
+        }
+        .sidebar span {
+            display: block;
+            text-align: center;
+            font-weight: bold;
+            font-size: 20px;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+        .sidebar .bi {
+            font-size: 25px;
+            margin-right: 12px;
+            vertical-align: middle;
         }
         .sidebar .nav-link {
             color: #000;
-            margin-bottom: 10px; /* Thêm khoảng cách giữa các liên kết */
+            font-size: 13px;
+            margin-bottom: 10px;
+            transition: background-color 0.3s ease; /* Thêm hiệu ứng transition */
         }
         .sidebar .nav-link.active {
-            background-color: #9fc5f8;
-            color: #fff;
+            background-color: #DDDDDD;
+            color: #000;
         }
         .sidebar .nav-link:hover {
-            background-color: #9fc5f8;
-            color: #fff;
-        }
-        .sidebar .bi {
-            margin-right: 10px;
-        }
-        .sidebar span {
-            display: block; /* Chuyển đổi thành block để có thể căn giữa */
-            text-align: center; /* Căn giữa nội dung */
-            font-weight: bold; /* In đậm tiêu đề */
-            margin-bottom: 20px; /* Thêm khoảng cách dưới tiêu đề */
+            background-color: #DDDDDD;
+            color: #000;
         }
         .container-fluid {
             padding-left: 0;
@@ -86,28 +92,34 @@
 <body>
 <div class="container-fluid">
     <div class="row">
-        <div class="col-md-2 sidebar">
-            <div class="d-flex flex-column p-3">
-                <div class="mb-4">
-                    <span> <i class="bi bi-person-circle"></i>NHÂN VIÊN</span>
+        <div class="col-md-2 sidebar mt-0">
+            <div class="d-flex flex-column p-3 pt-0">
+                <div class="mt-0">
+                    <span> <i class="bi bi-person-circle"></i>BAC SI</span>
                 </div>
                 <ul class="nav flex-column">
                     <li class="nav-item mb-2">
-                        <a class="nav-link active" href="#">
+                        <a class="nav-link" href="#">
                             <i class="bi bi-calendar-check"></i>
-                            Xử lý yêu cầu đặt lịch
+                            Thống kê nhân viên
                         </a>
                     </li>
                     <li class="nav-item mb-2">
-                        <a class="nav-link" href="#">
+                        <a class="nav-link active" href="#">
                             <i class="bi bi-calendar-plus"></i>
-                            Tạo lịch khám bệnh
+                            Thống kê thuốc thú Y
                         </a>
                     </li>
                     <li class="nav-item mb-2">
                         <a class="nav-link" href="#">
-                            <i class="bi bi-file-earmark-medical"></i>
-                            Quản lý thuốc thú y
+                            <i class="bi bi-calendar-check"></i>
+                            Thống kê khách hàng
+                        </a>
+                    </li>
+                    <li class="nav-item mb-2">
+                        <a class="nav-link" href="#">
+                            <i class="bi bi-calendar-check"></i>
+                            Thống kê thú cưng
                         </a>
                     </li>
                 </ul>

@@ -129,48 +129,42 @@
                 <span class="fs-5">Nguyen The
                 <img class="w-30 h-30" style="width: 40px" src="../../img/logo.jpg" alt=""></span>
             </div>
-            <div class="p-4">
-                <h3 class="text-center fw-3  mt-5 mb-4">Mẫu thông kế thông tin</h3>
-                <table class="table table-bordered">
-                    <thead class="table-light"  >
-                    <tr >
-                        <th scope="col" style="background-color: #9adafe ">Mã</th>
-                        <th scope="col " style="background-color: #9adafe ">Tên</th>
-                        <th scope="col" style="background-color: #9adafe ">Giới tính</th>
-                        <th scope="col" style="background-color: #9adafe ">Chức vụ</th>
-                        <th scope="col" style="background-color: #9adafe ">Ngày sinh</th>
-                        <th scope="col" style="background-color: #9adafe ">SĐT</th>
-                        <th scope="col" style="background-color: #9adafe ">Email</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <tr>
-                        <td>BS01</td>
-                        <td>Đẩu Thế</td>
-                        <td>Nam</td>
-                        <td>Bác sĩ</td>
-                        <td>26/5/2024</td>
-                        <td>09xxxxxxxx</td>
-                        <td>bbb@gmail.com</td>
-                    </tr>
-                    <tr>
-                        <td>NV01</td>
-                        <td>Xuân Hiền</td>
-                        <td>Nam</td>
-                        <td>Bác sĩ</td>
-                        <td>26/5/2024</td>
-                        <td>09xxxxxxxx</td>
-                        <td>ccc@gmail.com</td>
-                    </tr>
-                    </tbody>
-                </table>
-
-                <div><button class="btn btn-primary float-end mt-3" id="btnXuatThongTin"> Xuất thông tin</button></div>
-
-            </div>
+            <h3 class ="text-center fw-2 m-4 p-4">Mẫu thống kê thú cưng</h3>
+            <table class="table table-bordered">
+                <thead class="table-light"  >
+                <tr >
+                    <th scope="col" style="background-color: #9adafe ">Mã</th>
+                    <th scope="col " style="background-color: #9adafe ">Chủng loài</th>
+                    <th scope="col" style="background-color: #9adafe ">Giống loài</th>
+                    <th scope="col" style="background-color: #9adafe ">Tình trạng</th>
+                    <th scope="col" style="background-color: #9adafe ">Giới tính</th>
+                    <th scope="col" style="background-color: #9adafe ">Ngày chữa bệnh</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>BS01</td>
+                    <td>Chó</td>
+                    <td>Golden Retriever</td>
+                    <td>Khỏe mạnh</td>
+                    <td>Đực</td>
+                    <td>26/5/2024</td>
+                </tr>
+                <tr>
+                    <td>NV01</td>
+                    <td>Mèo</td>
+                    <td>Ba Tư</td>
+                    <td>Khỏe mạnh</td>
+                    <td>Cái</td>
+                    <td>26/5/2024</td>
+                </tr>
+                </tbody>
+            </table>
+            <div><button class="btn btn-primary float-end mt-3 me-3" id="btnXuatThongTin"> Xuất thông tin</button></div>
 
         </div>
     </div>
+</div>
 </div>
 <!-- Modal thông báo xuất thành công -->
 <div class="modal fade" id="myModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -189,6 +183,8 @@
         </div>
     </div>
 </div>
+
+
 <!--JS thông báo xuất thành công -->
 <script>
     document.getElementById('btnXuatThongTin').addEventListener('click', function() {
@@ -204,3 +200,4 @@
         crossorigin="anonymous"></script>
 </body>
 </html>
+

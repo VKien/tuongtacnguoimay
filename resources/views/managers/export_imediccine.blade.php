@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>THỐNG KÊ THUỘC THÚ Y</title>
+    <title>PetHaven Animal Hospital</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.0/font/bootstrap-icons.min.css" rel="stylesheet">
     <style>
@@ -11,7 +11,7 @@
             font-family: Arial, sans-serif;
         }
         .sidebar {
-            background-color: #d8e6f3;
+            background-color: #b8e5fe;
             height: 100vh;
             box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
             padding-top: 20px;
@@ -33,14 +33,14 @@
             color: #000;
             font-size: 13px;
             margin-bottom: 10px;
+            transition: background-color 0.3s, color 0.3s;
         }
         .sidebar .nav-link.active {
-            background-color: #9fc5f8;
-            color: #fff;
+            background-color: #dddddd;
         }
         .sidebar .nav-link:hover {
-            background-color: #9fc5f8;
-            color: #fff;
+            background-color: #dddddd;
+            color: #000;
         }
         .container-fluid {
             padding-left: 0;
@@ -104,13 +104,13 @@
                         </a>
                     </li>
                     <li class="nav-item mb-2">
-                        <a class="nav-link active" href="#">
+                        <a class="nav-link" href="#">
                             <i class="bi bi-calendar-plus"></i>
                             Thống kê thuốc thú Y
                         </a>
                     </li>
                     <li class="nav-item mb-2">
-                        <a class="nav-link" href="#">
+                        <a class="nav-link active" href="#">
                             <i class="bi bi-calendar-check"></i>
                             Thống kê khách hàng
                         </a>
@@ -193,15 +193,15 @@
 <!-- Modal thông báo xuất thành công -->
 <div class="modal fade" id="myModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title text-center" id="exampleModalLabel">Thông báo</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        <div class="modal-content text-center">
+            <div class="modal-header justify-content-center position-relative">
+                <h5 class="modal-title w-100 text-center" id="exampleModalLabel" style ="flex: 1;text-align: center;">Thông báo</h5>
+                <button type="button" class="btn-close position-absolute end-0 me-3" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
                 Xuất thông tin thành công.
             </div>
-            <div class="modal-footer">
+            <div class="modal-footer justify-content-center">
                 <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Đóng</button>
             </div>
         </div>
