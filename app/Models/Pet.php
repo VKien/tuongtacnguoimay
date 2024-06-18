@@ -29,7 +29,8 @@ class Pet extends BaseModel
 
     public function healthRecord()
     {
-        return $this->belongsTo(HealthRecord::class);
+        return $this->hasMany(HealthRecord::class);
     }
+
 
 }

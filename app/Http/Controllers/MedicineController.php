@@ -2,63 +2,69 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Medicine;
 use Illuminate\Http\Request;
 
 class MedicineController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
     public function index()
     {
-        //
+        $medicines = Medicine::all();
+        return view('employees.medicines.index', compact('medicines'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
     public function create()
     {
-        //
+        return view('employees.medicines.create');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'name' => 'required',
+            'type' => 'required',
+            'cost' => 'required',
+            'manufacture_date' => 'required|date',
+            'expiry_date' => 'required|date',
+        ]);
+
+        Medicine::create($request->all());
+
+        return redirect()->route('medicines.index')
+            ->with('success', 'Medicine created successfully.');
     }
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(string $id)
+    public function show(Medicine $medicine)
     {
-        //
+        return view('employees.medicines.show', compact('medicine'));
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(string $id)
+    public function edit(Medicine $medicine)
     {
-        //
+        return view('employees.medicines.edit', compact('medicine'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, string $id)
+    public function update(Request $request, Medicine $medicine)
     {
-        //
+        $request->validate([
+            'name' => 'required',
+            'type' => 'required',
+            'cost' => 'required',
+            'manufacture_date' => 'required|date',
+            'expiry_date' => 'required|date',
+        ]);
+
+        $medicine->update($request->all());
+
+        return redirect()->route('medicines.index')
+            ->with('success', 'Medicine updated successfully');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(string $id)
+    public function destroy(Medicine $medicine)
     {
-        //
+        $medicine->delete();
+
+        return redirect()->route('employees.medicines.index')
+            ->with('success', 'Medicine deleted successfully');
     }
 }

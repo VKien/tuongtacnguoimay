@@ -8,6 +8,11 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 class BaseModel extends Model
 {
+    protected $fillable = [
+        'created_by',
+        'updated_by',
+    ];
+
     public function createdBy()
     {
         return $this->belongsTo(User::class, 'created_by');

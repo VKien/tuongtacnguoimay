@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Schedule;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class ScheduleController extends Controller
@@ -11,7 +13,13 @@ class ScheduleController extends Controller
      */
     public function index()
     {
-        //
+        $schedules = User::select('users.id', 'users.name', 'services.type', 'schedules.date', 'users.phone', 'pets.name AS pet_name', 'schedules.message', 'pets.species')
+            ->join('schedules', 'users.id', '=', 'schedules.customer_id')
+            ->join('pets', 'users.id', '=', 'pets.customer_id')
+            ->join('services', 'schedules.service_id', '=', 'services.id')
+            ->get();
+        echo json_encode($schedules);
+        return view('doctors.schedules.index', compact('schedules'));
     }
 
     /**
@@ -61,4 +69,47 @@ class ScheduleController extends Controller
     {
         //
     }
+
+    public function CfCfBuild(string $id)
+    {
+        // Find the schedule by ID
+        $schedule = Schedule::find($id);
+
+        if ($schedule) {
+            // Update the status to 1
+            $schedule->status = 1;
+            $schedule->save();
+
+            // Optionally, add a success message or redirect
+            return redirect()->back()->with('success', 'Schedule status updated successfully.');
+        } else {
+            // Handle the case where the schedule is not found
+            return redirect()->back()->with('error', 'Schedule not found.');
+        }
+    }
+
+    public function CancelBuild(Request $request, $id)
+    {
+        // Find the schedule by ID
+        $schedule = Schedule::find($id);
+        $request->validate([
+            'message' => 'required',
+
+        ], [
+            'message.required' => 'Không được bỏ trống.',
+        ]);
+        if ($schedule) {
+            // Update the status to 1
+            $schedule->status = 2;
+            $schedule->message = $request->input('message');
+            $schedule->save();
+
+            // Optionally, add a success message or redirect
+            return redirect()->back()->with('success', 'Schedule status updated successfully.');
+        } else {
+            // Handle the case where the schedule is not found
+            return redirect()->back()->with('error', 'Schedule not found.');
+        }
+    }
+
 }

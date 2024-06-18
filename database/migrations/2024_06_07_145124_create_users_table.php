@@ -17,12 +17,13 @@ return new class extends Migration {
             $table->integer('sex')->nullable();
             $table->date('birthday')->nullable();
             $table->string('hometown')->nullable();
-            $table->string('address');
-            $table->string('phone');
+            $table->string('address')->nullable();
+            $table->string('phone')->nullable();
             $table->string('degree')->nullable();
             $table->string('password')->nullable();
             $table->unsignedBigInteger('created_by')->nullable();
             $table->unsignedBigInteger('updated_by')->nullable();
+            $table->softDeletes();
             $table->timestamps();
         });
     }
