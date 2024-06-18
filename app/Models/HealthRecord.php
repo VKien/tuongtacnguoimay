@@ -13,6 +13,7 @@ class HealthRecord extends BaseModel
     protected $fillable = [
         'date',
         'pet_id',
+        'doctor_id',
     ];
 
     protected $hidden = [
@@ -20,11 +21,16 @@ class HealthRecord extends BaseModel
 
     public function doctor()
     {
-        return $this->belongsTo(User::class, 'user_id');
+        return $this->belongsTo(User::class, 'doctor_id');
     }
 
     public function pet()
     {
         return $this->belongsTo(Pet::class);
     }
+    public function prescriptions()
+    {
+        return $this->hasMany(Prescription::class);
+    }
+
 }

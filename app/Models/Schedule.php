@@ -14,11 +14,20 @@ class Schedule extends BaseModel
     protected $fillable = [
         'date',
         'service_id',
+        'customer_id',
+        'doctor_id',
+        'status',
+        'message',
     ];
 
     protected $hidden = [
     ];
 
+
+    public function service()
+    {
+        return $this->belongsTo(Service::class);
+    }
 
     public function doctor()
     {
@@ -29,4 +38,5 @@ class Schedule extends BaseModel
     {
         return $this->belongsTo(User::class, 'customer_id');
     }
+
 }

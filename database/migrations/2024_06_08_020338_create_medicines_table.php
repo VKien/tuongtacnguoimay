@@ -13,10 +13,13 @@ return new class extends Migration {
         Schema::create('medicines', function (Blueprint $table) {
             $table->id();
             $table->string('name');
+            $table->string('type');
+            $table->float('cost');
             $table->date('manufacture_date');
             $table->date('expiry_date');
             $table->unsignedBigInteger('created_by')->nullable();
             $table->unsignedBigInteger('updated_by')->nullable();
+            $table->softDeletes();
             $table->timestamps();
         });
     }

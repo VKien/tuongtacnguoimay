@@ -2,7 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
+use App\Models\UserRule;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 class UserRuleController extends Controller
 {
@@ -11,7 +15,9 @@ class UserRuleController extends Controller
      */
     public function index()
     {
-        //
+
+
+
     }
 
     /**

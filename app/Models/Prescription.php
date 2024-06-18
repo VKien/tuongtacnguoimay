@@ -28,4 +28,5 @@ class Prescription extends BaseModel
     {
         return $this->belongsTo(HealthRecord::class);
     }
+
 }

@@ -23,6 +23,7 @@ return new class extends Migration {
                 ->onUpdate('cascade');
             $table->unsignedBigInteger('created_by')->nullable();
             $table->unsignedBigInteger('updated_by')->nullable();
+            $table->softDeletes();
             $table->timestamps();
         });
     }

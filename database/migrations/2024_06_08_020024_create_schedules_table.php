@@ -13,7 +13,7 @@ return new class extends Migration {
         Schema::create('schedules', function (Blueprint $table) {
             $table->id();
             $table->date('date');
-            $table->integer('status');
+            $table->integer('status')->default(0);
             $table->unsignedBigInteger('service_id');
             $table->foreign('service_id')
                 ->references('id')->on('services')
@@ -30,9 +30,10 @@ return new class extends Migration {
                 ->references('id')->on('users')
                 ->onDelete('cascade')
                 ->onUpdate('cascade');
-
+            $table->string('message')->nullable();
             $table->unsignedBigInteger('created_by')->nullable();
             $table->unsignedBigInteger('updated_by')->nullable();
+            $table->softDeletes();
             $table->timestamps();
         });
     }

@@ -1,6 +1,9 @@
 <?php
 
 use App\Http\Controllers\CustomAuthController;
+use App\Http\Controllers\MedicineController;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\UserRuleController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,8 +18,28 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('home');
+    return view('customer.booking');
 });
+Route::get('/managers/employee', function () {
+    return view('managers.employee_stats');
+});
+
+Route::get('/managers/medicine', function () {
+    return view('managers.medicine_stats');
+});
+
+Route::get('/managers/mana_empl', function () {
+    return view('managers.kien.manager_employee');
+});
+
+Route::get('/managers/healthcares', function () {
+    return view('managers.kien.healthcares');
+});
+
+Route::get('/managers/exa', function () {
+    return view('managers.kien.Examination_schedule');
+});
+
 
 Route::get('logout', [CustomAuthController::class, 'logout']);
 
@@ -42,3 +65,13 @@ Route::middleware(['authEmployee'])->group(function () {
 Route::middleware(['authDoctor'])->group(function () {
     Route::get('doctors', [\App\Http\Controllers\UserController::class, 'doctor']);
 });
+
+
+Route::get('customers/create', [\App\Http\Controllers\UserController::class, 'CreateBuild']);
+Route::post('customers', [\App\Http\Controllers\UserController::class, 'StoreBuild'])->name('customers-store-build');
+
+
+
+// git add .
+// git commit -m "noi dung push"
+// git push origin kien

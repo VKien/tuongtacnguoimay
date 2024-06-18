@@ -13,9 +13,11 @@ return new class extends Migration {
         Schema::create('services', function (Blueprint $table) {
             $table->id();
             $table->string('name');
+            $table->float('cost');
             $table->string('type')->nullable();
             $table->unsignedBigInteger('created_by')->nullable();
             $table->unsignedBigInteger('updated_by')->nullable();
+            $table->softDeletes();
             $table->timestamps();
         });
     }

@@ -12,7 +12,7 @@ return new class extends Migration {
     {
         Schema::create('health_records', function (Blueprint $table) {
             $table->id();
-            $table->date('date');
+            $table->date('date')->nullable();
             $table->unsignedBigInteger('doctor_id');
             $table->unsignedBigInteger('pet_id');
 
@@ -28,6 +28,7 @@ return new class extends Migration {
 
             $table->unsignedBigInteger('created_by')->nullable();
             $table->unsignedBigInteger('updated_by')->nullable();
+            $table->softDeletes();
             $table->timestamps();
         });
     }
