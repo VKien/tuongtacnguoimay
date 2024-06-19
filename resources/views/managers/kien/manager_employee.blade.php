@@ -87,6 +87,8 @@
         }
         .btn-group button:hover {
             transition: background-color 0.3s;
+            background-color: #007bff;
+            color: white;
         }
         .section-divider {
             border-top: 1px solid black;
@@ -112,11 +114,62 @@
             margin: 15% auto;
             padding: 20px;
             border: 1px solid #888;
-            width: 60%;
+            width: 30%;
+            border-radius: 5px;
+        }
+        .modal-content h5 {
             text-align: center;
+            margin-bottom: 20px;
+        }
+        .modal-content p {
+            text-align: left;
         }
         .modal-footer {
-            margin-top: 20px;
+            display: flex;
+            justify-content: flex-end;
+            padding-top: 20px;
+        }
+        .modal-footer .btn {
+            width: 100px;
+            margin-left: 10px;
+        }
+        .modal-footer .btn-secondary {
+            background-color: #f8f9fa;
+            border: 1px solid #dee2e6;
+            color: black;
+        }
+        .modal-footer .btn-primary {
+            background-color: #007bff;
+            border: none;
+            color: white;
+        }
+        .modal-footer .btn:hover {
+            background-color: #007bff;
+            color: white;
+        }
+
+        /* Success modal styles */
+        .success-modal-content {
+            background-color: white;
+            margin: 15% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 30%;
+            border-radius: 5px;
+            text-align: center;
+        }
+        .success-modal-content h5 {
+            margin-bottom: 20px;
+        }
+        .success-modal-content button {
+            background-color: #007bff;
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+        }
+        .success-modal-content button:hover {
+            background-color: #0056b3;
         }
     </style>
 </head>
@@ -234,8 +287,8 @@
     <!-- Confirmation Modal -->
     <div id="confirmationModal" class="modal">
         <div class="modal-content">
-            <h5>Xác nhận hành động</h5>
-            <p>Bạn có muốn <span id="actionType"></span> thông tin tài khoản không?</p>
+            <h5>Xác nhận <span id="actionTypeText"></span> tài khoản</h5>
+            <p>Bạn có muốn <span id="actionType"></span> tài khoản không?</p>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" onclick="closeModal()">Hủy</button>
                 <button type="button" class="btn btn-primary" onclick="confirmAction()">Xác nhận</button>
@@ -245,30 +298,38 @@
 
     <!-- Success Modal -->
     <div id="successModal" class="modal">
-        <div class="modal-content">
+        <div class="success-modal-content">
             <h5>Thông báo</h5>
-            <p>Cập nhật tài khoản thành công!</p>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" onclick="closeModal()">Xong</button>
-            </div>
+            <p id="successMessage">Thao tác thành công!</p>
+            <button onclick="closeSuccessModal()">Xong</button>
         </div>
     </div>
 
     <!-- JavaScript -->
     <script>
+        let currentAction = '';
+
         function showConfirmation(action) {
-            document.getElementById('actionType').innerText = action.toLowerCase();
+            currentAction = action;
+            const actionType = action.toLowerCase();
+            document.getElementById('actionType').innerText = actionType;
+            document.getElementById('actionTypeText').innerText = actionType;
             document.getElementById('confirmationModal').style.display = 'block';
         }
 
         function closeModal() {
             document.getElementById('confirmationModal').style.display = 'none';
-            document.getElementById('successModal').style.display = 'none';
         }
 
         function confirmAction() {
             closeModal();
+            // Display success message modal
+            document.getElementById('successMessage').innerText = `${currentAction} tài khoản thành công!`;
             document.getElementById('successModal').style.display = 'block';
+        }
+
+        function closeSuccessModal() {
+            document.getElementById('successModal').style.display = 'none';
         }
     </script>
 </body>
