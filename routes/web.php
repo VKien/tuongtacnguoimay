@@ -1,6 +1,9 @@
 <?php
 
 use App\Http\Controllers\CustomAuthController;
+use App\Http\Controllers\MedicineController;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\UserRuleController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -62,6 +65,10 @@ Route::middleware(['authEmployee'])->group(function () {
 Route::middleware(['authDoctor'])->group(function () {
     Route::get('doctors', [\App\Http\Controllers\UserController::class, 'doctor']);
 });
+
+
+Route::get('customers/create', [\App\Http\Controllers\UserController::class, 'CreateBuild']);
+Route::post('customers', [\App\Http\Controllers\UserController::class, 'StoreBuild'])->name('customers-store-build');
 
 
 

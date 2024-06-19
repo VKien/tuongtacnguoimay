@@ -15,6 +15,8 @@ class Medicine extends BaseModel
         'name',
         'manufacture_date',
         'expiry_date',
+        'type',
+        'cost',
     ];
 
     protected $hidden = [

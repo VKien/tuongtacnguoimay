@@ -5,9 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quản lý tài khoản</title>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
     <style>
         .sidebar {
-            background-color: #9ADAFE;
+            background-color: #9adafe;
             padding: 15px;
             height: 100vh;
             width: 200px;
@@ -17,6 +18,7 @@
         }
         .sidebar h6, .sidebar p {
             text-align: center;
+            font-size: 22px;
         }
         .sidebar .divider {
             border-top: 1px solid black;
@@ -25,24 +27,25 @@
         .sidebar .btn {
             width: 100%;
             height: 60px;
-            background-color: #DDDDDD;
             color: black;
             border: none;
             margin-top: 20px;
         }
+        .sidebar .btn:hover {
+            background-color: #DDDDDD;
+        }
         .topbar {
             background-color: #f8f9fa;
-            padding: 10px;
+            padding: 22px 12px 12px;
             display: flex;
-            justify-content: space-between;
+            justify-content: flex-end;
             align-items: center;
             border-bottom: 1px solid #dee2e6;
-            margin-left: 0px;
             position: fixed;
             top: 0;
             right: 0;
             left: 200px;
-            height: 60px;
+            height: 65px;
             z-index: 1000;
         }
         .main-content {
@@ -52,6 +55,7 @@
         .form-section {
             display: flex;
             justify-content: space-between;
+            margin-bottom: 20px;
         }
         .form-group {
             display: flex;
@@ -68,20 +72,12 @@
         .form-right .form-group input, .form-right .form-group select {
             width: 70%;
         }
-        .user-info {
-            display: flex;
-            align-items: center;
-            margin-bottom: 20px;
-        }
-        .user-info img {
-            margin-right: 10px;
-        }
         .btn-group {
             display: flex;
             justify-content: space-between;
-        }   
+        }
         .btn-group button {
-            width: 10px;
+            width: 100px;
             height: 50px;
             background-color: #D9D9D9;
             color: black;
@@ -89,28 +85,18 @@
             margin: 30px 100px 0 100px ;
             padding: 2.5px 5px;
         }
-        .form-group .gender-radio {
-            display: flex;
-            justify-content: flex-start;
-            align-items: center;
-        }
-        .form-group .gender-radio label {
-            margin: 0 10px 0 0;
+        .btn-group button:hover {
+            transition: background-color 0.3s;
         }
         .section-divider {
             border-top: 1px solid black;
             margin: 40px 0;
         }
-        .gender-radio {
-            display: flex;
-            align-items: center;
+        .table th, .table td {
+            text-align: center;
         }
-        .gender-radio input[type="radio"] {
-            margin-right: 5px;
-        }
-        .gender-radio input[type="radio"]#gd_nu {
-            margin-left: 30px;
-        }
+
+        /* Modal styles */
         .modal {
             display: none;
             position: fixed;
@@ -119,93 +105,87 @@
             top: 0;
             width: 100%;
             height: 100%;
-            overflow: auto;
-            background-color: rgb(0,0,0);
-            background-color: rgba(0,0,0,0.4);
+            background-color: rgba(0,0,0,0.5);
         }
         .modal-content {
-            background-color: #fefefe;
+            background-color: white;
             margin: 15% auto;
             padding: 20px;
             border: 1px solid #888;
-            width: 80%;
-            max-width: 500px;
+            width: 60%;
+            text-align: center;
         }
         .modal-footer {
-            display: flex;
-            justify-content: flex-end;
             margin-top: 20px;
-        }
-        .modal-footer button {
-            margin-left: 10px;
         }
     </style>
 </head>
 <body>
     <div class="sidebar">
         <div class="text-center mb-4">
-            <h6>Quản lý</h6>
+            <h6><i class="fas fa-user-md"></i> Bác sĩ</h6>
         </div>
         <div class="divider"></div>
-        <button class="btn">Quản lý tài khoản</button>
+        <button class="btn"><i class="fas fa-book-medical"></i> Quản lý tài khoản</button>
     </div>
     <div class="topbar">
-        <div></div>
         <div class="user-info">
             <img src="https://via.placeholder.com/30" class="rounded-circle" alt="User">
-            <span>Vương Kiên</span>
+            <span>Quốc Huy</span>
         </div>
     </div>
     <div class="main-content">
-        <form>
-            <div class="form-section">
-                <div class="form-left">
-                    <div class="form-group">
-                        <label for="employeeName">Tên nhân viên:</label>
-                        <input type="text" class="form-control" id="employeeName" placeholder="Tên nhân viên">
-                    </div>
-                    <div class="form-group">
-                        <label for="password">Mật khẩu:</label>
-                        <input type="password" class="form-control" id="password" placeholder="Mật khẩu">
-                    </div>
-                    <div class="form-group">
-                        <label for="email">Email:</label>
-                        <input type="email" class="form-control" id="email" placeholder="Email">
-                    </div>
-                    <div class="form-group">
-                        <label>Giới tính:</label>
-                        <div class="gender-radio">
-                            <input type="radio" name="gender" value="male"> Nam
-                            <input id="gd_nu" type="radio" name="gender" value="female"> Nữ
-                        </div>
-                    </div>
+        <div class="form-section mt-3">
+            <div class="form-left">
+                <div class="form-group">
+                    <label for="doctorId">Tên nhân viên:</label>
+                    <input type="text" class="form-control" id="doctorId">
                 </div>
-                <div class="form-right">
-                    <div class="form-group">
-                        <label for="employeeRole">Chức vụ:</label>
-                        <select class="form-control" id="employeeRole">
-                            <option value="employee">Nhân Viên</option>
-                            <option value="manager">Quản lý</option>
-                            <option value="doctor">Bác Sĩ</option>
-                        </select>
+                <div class="form-group">
+                    <label for="password">Mật khẩu:</label>
+                    <input type="password" class="form-control" id="password">
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" class="form-control" id="email">
+                </div>
+                <div class="form-group">
+                    <label for="gender">Giới tính:</label>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="gender" id="male" value="male">
+                        <label class="form-check-label" for="male">Nam</label>
                     </div>
-                    <div class="form-group">
-                        <label for="phone">Số điện thoại:</label>
-                        <input type="text" class="form-control" id="phone" placeholder="Số điện thoại">
-                    </div>
-                    <div class="form-group">
-                        <label for="issueDate">Ngày cấp:</label>
-                        <input type="date" class="form-control" id="issueDate">
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="gender" id="female" value="female">
+                        <label class="form-check-label" for="female">Nữ</label>
                     </div>
                 </div>
             </div>
-            <div class="btn-group">
-                <button type="button" class="btn btn-secondary" onclick="showConfirmation('Thêm')">Thêm</button>
-                <button type="button" class="btn btn-secondary" onclick="showConfirmation('Xóa')">Xóa</button>
-                <button type="button" class="btn btn-secondary" onclick="showConfirmation('Sửa')">Sửa</button>
-                <button type="button" class="btn btn-secondary" onclick="showConfirmation('Tìm kiếm')">Tìm kiếm</button>
+            <div class="form-right">
+                <div class="form-group">
+                    <label for="role">Chức vụ:</label>
+                    <select class="form-control" id="role">
+                        <option>Quản lý</option>
+                        <option>Bác sĩ</option>
+                        <option>Nhân viên</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="issueDate">Ngày cấp:</label>
+                    <input type="date" class="form-control" id="issueDate">
+                </div>
+                <div class="form-group">
+                    <label for="phone">Số điện thoại:</label>
+                    <input type="text" class="form-control" id="phone">
+                </div>
             </div>
-        </form>
+        </div>
+        <div class="btn-group">
+            <button type="button" class="btn tao-so-btn" onclick="showConfirmation('Thêm')">Thêm</button>
+            <button type="button" class="btn xoa-btn" onclick="showConfirmation('Xóa')"> Xóa</button>
+            <button type="button" class="btn cap-nhat-btn" onclick="showConfirmation('Sửa')"> Sửa</button>
+            <button type="button" class="btn">Tìm kiếm</button>
+        </div>
         <div class="section-divider"></div>
         <table class="table table-bordered mt-4">
             <thead>
@@ -251,9 +231,10 @@
         </table>
     </div>
 
+    <!-- Confirmation Modal -->
     <div id="confirmationModal" class="modal">
         <div class="modal-content">
-            <h5>Xác nhận sửa thông tin</h5>
+            <h5>Xác nhận hành động</h5>
             <p>Bạn có muốn <span id="actionType"></span> thông tin tài khoản không?</p>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" onclick="closeModal()">Hủy</button>
@@ -262,6 +243,7 @@
         </div>
     </div>
 
+    <!-- Success Modal -->
     <div id="successModal" class="modal">
         <div class="modal-content">
             <h5>Thông báo</h5>
@@ -272,21 +254,21 @@
         </div>
     </div>
 
-    <!-- js -->
+    <!-- JavaScript -->
     <script>
         function showConfirmation(action) {
             document.getElementById('actionType').innerText = action.toLowerCase();
             document.getElementById('confirmationModal').style.display = 'block';
         }
 
-        function confirmAction() {
-            document.getElementById('confirmationModal').style.display = 'none';
-            document.getElementById('successModal').style.display = 'block';
-        }
-
         function closeModal() {
             document.getElementById('confirmationModal').style.display = 'none';
             document.getElementById('successModal').style.display = 'none';
+        }
+
+        function confirmAction() {
+            closeModal();
+            document.getElementById('successModal').style.display = 'block';
         }
     </script>
 </body>
