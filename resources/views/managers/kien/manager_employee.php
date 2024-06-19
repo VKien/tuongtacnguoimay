@@ -7,7 +7,7 @@
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <style>
         .sidebar {
-            background-color: #add8e6;
+            background-color: #9ADAFE;
             padding: 15px;
             height: 100vh;
             width: 200px;
@@ -83,8 +83,8 @@
         .btn-group button {
             width: 10px;
             height: 50px;
-            background-color: #6c757d;
-            color: white;
+            background-color: #D9D9D9;
+            color: black;
             border: none;
             margin: 30px 100px 0 100px ;
             padding: 2.5px 5px;
