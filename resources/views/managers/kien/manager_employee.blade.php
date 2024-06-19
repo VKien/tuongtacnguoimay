@@ -87,9 +87,13 @@
         }
         .btn-group button:hover {
             transition: background-color 0.3s;
-            background-color: #007bff;
-            color: white;
+            background-color: #9ADAFE;
+            color: black;
         }
+        .btn-group .xoa-btn:hover{
+            background-color: red;
+        }
+
         .section-divider {
             border-top: 1px solid black;
             margin: 40px 0;
@@ -134,18 +138,18 @@
             margin-left: 10px;
         }
         .modal-footer .btn-secondary {
-            background-color: #f8f9fa;
+            background-color: #D9D9D9;
             border: 1px solid #dee2e6;
             color: black;
         }
         .modal-footer .btn-primary {
-            background-color: #007bff;
+            background-color: #D9D9D9;
             border: none;
-            color: white;
+            color: black;
         }
         .modal-footer .btn:hover {
             background-color: #007bff;
-            color: white;
+            color: black;
         }
 
         /* Success modal styles */
@@ -162,14 +166,14 @@
             margin-bottom: 20px;
         }
         .success-modal-content button {
-            background-color: #007bff;
+            background-color: #D9D9D9;
             border: none;
-            color: white;
+            color: black;
             padding: 10px 20px;
             border-radius: 5px;
         }
         .success-modal-content button:hover {
-            background-color: #0056b3;
+            background-color: #D9D9D9;
         }
     </style>
 </head>
