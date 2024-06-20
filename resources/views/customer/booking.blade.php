@@ -22,8 +22,8 @@
         </div>
         <ul class=" header-middle nav nav-pills nav-fill ">
             <li class="nav-item me-5 ">
-                <img class="w-30" style="height: 70px;" src="{{ asset('./../../img.png') }}" alt="Active">
 
+                <img class="w-30" src="./../../img/haaapng.png" alt="Active">
             </li>
             <li class="  nav-item  d-flex align-items-center ">
                 <h2 class="mb-0 fw-bolder ">PetHaven vì sức khoẻ thú cưng của bạn</h2>
