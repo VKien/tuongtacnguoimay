@@ -106,7 +106,7 @@
                                         Hi vọng chúng ta có thể gặp nhau sớm tại PetHaven.
                                     </div>
                                     <div class="modal-footer">
-                                        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Đóng</button>
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
                                     </div>
                                 </div>
                             </div>
