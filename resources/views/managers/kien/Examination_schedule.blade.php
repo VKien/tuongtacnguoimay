@@ -71,6 +71,11 @@
             z-index: 2000;
             width: 600px;
         }
+        #infoModal h4 {
+            justify-content: center;
+            text-align: center;
+            margin-bottom: 20px;
+        }
         #infoModal .form-group {
             margin-bottom: 15px;
         }
@@ -80,18 +85,30 @@
         }
         #infoModal .form-group label {
             display: block;
+            text-align: left;
         }
         #infoModal .form-group input {
             width: 100%;
             padding: 5px;
             box-sizing: border-box;
+            background-color: #f0f0f0;
+            pointer-events: none;
         }
-        #infoModal .close {
-            background: #ccc;
+        #infoModal .close-btn {
+            background: #888888;
+            color: white;
             padding: 5px 10px;
             cursor: pointer;
             border: none;
             margin-top: 10px;
+            float: right;
+        }
+        #infoModal .close-icon {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 24px;
+            cursor: pointer;
         }
         .sidebar h6 {
             display: flex;
@@ -162,6 +179,7 @@
 
 <!-- Information Modal -->
 <div id="infoModal">
+    <span class="close-icon">&times;</span>
     <h4>Thông tin lịch khám bệnh</h4>
     <div class="form-row">
         <div class="form-group" style="width: 45%;">
@@ -193,13 +211,14 @@
             <input type="text" id="ghiChu" readonly>
         </div>
     </div>
-    <button class="close">Đóng</button>
+    <button class="close-btn">Đóng</button>
 </div>
 
 <script>
     document.addEventListener('DOMContentLoaded', function() {
         const infoModal = document.getElementById('infoModal');
-        const closeModal = infoModal.querySelector('.close');
+        const closeModal = infoModal.querySelector('.close-btn');
+        const closeIcon = infoModal.querySelector('.close-icon');
         const xemThongTinButtons = document.querySelectorAll('.xem-thong-tin');
 
         xemThongTinButtons.forEach(button => {
@@ -222,6 +241,10 @@
         });
 
         closeModal.addEventListener('click', function() {
+            infoModal.style.display = 'none';
+        });
+
+        closeIcon.addEventListener('click', function() {
             infoModal.style.display = 'none';
         });
     });
