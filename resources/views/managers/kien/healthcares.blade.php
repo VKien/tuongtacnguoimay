@@ -167,7 +167,7 @@
             display: flex;
             justify-content: space-between;
             margin-bottom: 20px;
-            gap: 20px; /* Added gap between left and right sections */
+            gap: 20px; 
         }
 
         .modal-content .form-left,
@@ -184,10 +184,13 @@
         .modal-content .form-group label {
             margin-bottom: 5px;
             text-align: left;
-            margin-left: 0; /* Align labels to the left edge of the form group */
-            padding-left: 0; /* Ensure no padding on the left */
+            margin-left: 0; 
+            padding-left: 0; 
+            display: block;
         }
-
+        .form-left, .form-right{
+            justify-content: left;
+        }
         .modal-content .form-group input {
             width: 100%;
         }
@@ -219,12 +222,12 @@
     </div>
     <div class="divider"></div>
     <button class="btn"><i class="fas fa-calendar-alt p-2"></i> Xem lịch khám</button>
-    <button class="btn"><i class="fas fa-book-medical p-1"></i> Quản lý sổ khám bệnh</button>
+    <button class="btn" style="background-color: #DDDDDD;"><i class="fas fa-book-medical p-1"></i> Quản lý sổ khám bệnh</button>
 </div>
 <div class="topbar">
     <div class="user-info">
-        <img src="https://via.placeholder.com/30" class="rounded-circle" alt="User">
         <span>Quốc Huy</span>
+        <img src="https://via.placeholder.com/30" class="rounded-circle" alt="User">
     </div>
 </div>
 <div class="main-content">

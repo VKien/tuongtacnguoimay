@@ -91,8 +91,10 @@
             width: 100%;
             padding: 5px;
             box-sizing: border-box;
-            background-color: #f0f0f0;
+            background-color: #e9ecef;
             pointer-events: none;
+            border: 1px solid #D3D3D3 ;
+            border-radius: 3%;
         }
         #infoModal .close-btn {
             background: #888888;
@@ -126,13 +128,13 @@
         <h6><i class="fas fa-user-md"></i>Bác sĩ</h6>
     </div>
     <div class="divider"></div>
-    <button class="btn"><i class="fas fa-calendar-alt p-2"></i> Xem lịch khám</button>
+    <button class="btn" style="background-color: #DDDDDD;"><i class="fas fa-calendar-alt p-2"></i> Xem lịch khám</button>
     <button class="btn"><i class="fas fa-book-medical p-1"></i> Quản lý sổ khám bệnh</button>
 </div>
 <div class="topbar">
-    <div class="user-info">
-        <img src="https://via.placeholder.com/30" class="rounded-circle" alt="User">
+    <div class="user-info">  
         <span>Quốc Huy</span>
+        <img src="https://via.placeholder.com/30" class="rounded-circle" alt="User">
     </div>
 </div>
 <div class="main-content">
