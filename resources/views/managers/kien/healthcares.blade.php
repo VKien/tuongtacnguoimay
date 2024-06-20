@@ -154,6 +154,10 @@
         .modal-footer button {
             margin-left: 10px;
         }
+        .modal-footer .btn-secondary {
+            width: 90.26px;
+            height: 37.6px;
+        }  
         .modal-footer .confirm-btn {
             color: white;
         }

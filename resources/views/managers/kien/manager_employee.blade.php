@@ -142,7 +142,9 @@
             background-color: #D9D9D9;
             border: 1px solid #dee2e6;
             color: black;
-        }
+            width: 100px;
+            height: 36px;
+        }   
         .modal-footer .btn-primary {
             background-color: #D9D9D9;
             border: none;
